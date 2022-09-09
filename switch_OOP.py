@@ -1,5 +1,6 @@
 class LightSwitch:
-    def __init__(self) -> None:
+    def __init__(self, label) -> None:
+        self.label = label
         # Устанавливаем выключатель в положение 'Выкл.'
         self.switch_is_on = False
         # Устанавливаем яркость на '0'
@@ -23,11 +24,13 @@ class LightSwitch:
 
     # Показать текущие значения яркости и положения выключателя
     def show(self):
-        print('Switch is on?', self.switch_is_on)
-        print('Brightness is:', self.brightness)
+        print()
+        print('Label', self.label)
+        print(' Switch is on?', self.switch_is_on)
+        print(' Brightness is:', self.brightness)
 
 
-switch = LightSwitch()
+switch = LightSwitch('Switch_1')
 
 # Turn switch on, and raise the level 5 times
 switch.turn_on()
@@ -50,3 +53,5 @@ switch.raise_level()
 switch.raise_level()
 switch.raise_level()
 switch.show()
+
+print('switch variables:', vars(switch))
