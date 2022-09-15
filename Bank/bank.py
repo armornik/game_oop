@@ -23,8 +23,12 @@ class Bank:
         account_number = self.ask_for_valid_account_number()
         o_account = self.accounts_dict[account_number]
         # self.ask_for_valid_password(o_account)
-        self.check_password_match(o_account)
+        self.ask_for_valid_password(o_account)
         return o_account
+
+    def ask_for_valid_password(self, o_account):
+        password = input('Please enter your password: ')
+        o_account.checkPasswordMatch(password)
 
     def create_account(self, the_name, the_starting_amount, the_password):
         o_account = Account(the_name, the_starting_amount, the_password)
